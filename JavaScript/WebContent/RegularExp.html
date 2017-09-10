@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Regular Expression</title>
+<script type="text/javascript">
+	function autoCorrect(){
+		var pattern1 = /acse/i;
+		var pattern2 = /caes/i; // i searches case insensitive
+		
+		var html = document.getElementById("text").innerHTML;
+		html = html.replace(pattern1, "case");
+		html = html.replace(pattern2, "case");
+		document.getElementById("text").innerHTML = html;
+	}
+
+</script>
+</head>
+
+<body>
+<div id = "text">
+	This is a typical aCse of Sampling Algorithm in atypical caes!! <br><br>
+	<button type="submit" onClick="autoCorrect();">AutoCorrect</button>
+</div>
+</body>
+</html>

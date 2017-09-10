@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Arrays</title>
+<script type="text/javascript">
+	function printAllMonths(){
+		var html = "<table><thead><tr><th>Month</th><th>Days</th></tr></thead><tbody>";
+		var months = [{month: "January", days: "31" }, {month: "February", days: "28/29" }, {month: "March", days: "31" }, {month: "April", days: "30" }, {month: "May", days: "31" }, {month: "June", days: "30"}, {month: "July", days: "31"}, {month: "August", days: "31" }, {month: "September", days: "30"}, {month: "October", days: "31"}, {month: "November", days: "30"}, {month: "December", days: "31" }];
+		for(var i in months){
+			html = html + "<tr><td>";
+			console.log(months[i]);
+			html = html + months[i].month + "</td><td>";
+			html = html + months[i].days + "</td>";
+		}
+		html = html + "</tbody></table>";
+		console.log(html);
+		document.getElementById("months").innerHTML = html;
+	}
+
+</script>
+</head>
+<body onLoad="printAllMonths();">
+<div id = "months">
+</div>
+</body>
+</html>
