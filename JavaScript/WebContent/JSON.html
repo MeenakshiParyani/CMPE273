@@ -1,10 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Table from JSON</title>
+<script>
+
+function printEmployeeTableFromJSON(){
+	var json = '{"employees":[' +
+	'{"firstName":"Meenakshi","lastName":"Paryani" },' +
+	'{"firstName":"Nikhil","lastName":"Rajpal" },' +
+	'{"firstName":"Aparna","lastName":"Shreevastava" }]}';
+
+	var array = JSON.parse(json);
+	var html = "<table><caption>Employees</caption><thead><tr><th>Firstname</th><th>Lastname</th></tr></thead><tbody>";
+	for(var i in array.employees){
+		html = html + "<tr><td>";
+		console.log(array.employees[i]);
+		html = html + array.employees[i].firstName + "</td><td>";
+		html = html + array.employees[i].lastName + "</td>";
+	}
+	html = html + "</tbody></table>";
+	console.log(html);
+	document.getElementById("employee").innerHTML = html;
+}
+
+</script>
 </head>
-<body>
+<body onLoad = "printEmployeeTableFromJSON()">
+
+<div id="employee"></div>
 
 </body>
 </html>
