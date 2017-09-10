@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Conditions</title>
+<script type="text/javascript">
+	function getGrade(){
+		var marks = document.getElementById("marks").value;
+		var grade;
+		if(marks > 500){
+			grade = 'A+';
+		}else if(marks > 425 && marks <= 500){
+			grade = 'A';
+		}else if(marks > 375 && marks <= 425){
+			grade = 'B';
+		}else if(marks > 325 && marks <= 375){
+			grade = 'C';
+		}else{
+			grade = 'D';
+		}
+		document.getElementById("grade").innerHTML = "Student has got " + grade + " grade!!";
+		switch(grade){
+			case 'A+' : 
+				document.getElementById("remark").innerHTML = "Excellent!! :)";
+				break;
+			case 'A'  :
+				document.getElementById("remark").innerHTML = "Very Good!!";
+				break;
+			case 'B'  :
+				document.getElementById("remark").innerHTML = "Way to Go!!";
+				break;
+			case 'C'  :
+				document.getElementById("remark").innerHTML = "Needs improvement!!";
+				break;
+			case 'D'  :
+				document.getElementById("remark").innerHTML = "Alas!! :(";
+		}
+	}
+</script>
+</head>
+<body>
+Enter the Students Marks:<input type="text" id="marks">
+<button type="Submit" onClick="getGrade()">Grade</button><br><br>
+<div id="grade"></div>
+<div id="remark"></div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Events</title>
+<script type="text/javascript">
+	function onButtonClick(){
+		var name = document.getElementById("name").value;
+		console.log(name +"\n");
+		document.getElementById("welcome").innerHTML = "Hello " + name + ", Welcome !!";
+	}
+</script>
+</head>
+<body>
+	Enter your name : <input id="name" type="text" name="Name"> <br>
+	<button type="Submit" onClick = "onButtonClick();">Submit</button><br><br>
+	<div id="welcome"></div>
+</body>
+</html>

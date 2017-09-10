@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Errors</title>
+<script type="text/javascript">
+	function divide(number) {
+		try {
+			if (isNaN(number)) {
+				throw "Not a number";
+			} else if (number < 0)
+				throw "Negative number";
+			else if (number == 0) {
+				throw "Can not Divide by Zero";
+			} else {
+				document.getElementById("result").innerHTML = "Division result is "
+						+ 1 / number;
+			}
+		} catch (err) {
+			document.getElementById("result").innerHTML = "Error encountered is - "
+					+ err;
+		} finally {
+			var html = document.getElementById("result").innerHTML;
+			document.getElementById("result").innerHTML = html
+					+ "<br>End of Division!!";
+		}
+	}
+</script>
+</head>
+<body>
+	<div>
+		Enter a number to divide by 1: <input type="text" id="num"
+			value="Enter a number">
+		<button type="submit" onClick="divide(num.value)">Evaluate</button>
+	</div>
+	<div id="result"></div>
+</body>
+</html>
