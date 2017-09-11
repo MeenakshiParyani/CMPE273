@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function checkVisitCount(site){
+	if (typeof(Storage) !== "undefined") {
+	    document.getElementById("result").innerHTML = site + " was visited " + localStorage.getItem(site) + " times";
+	} else {
+	    document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+	}
+}
+
+function incrementCount(site){
+	localStorage.setItem(site, Number(localStorage.getItem(site)) + 1);
+}
+
+</script>
+</head>
+<body>
+<div>
+	Enter Site Name for Visit Count: <input type = "text" id="site">
+	<button type="Submit" onClick="checkVisitCount(site.value)">Check Count</button>
+	<button type="Submit" onClick="incrementCount(site.value)">Increment Count</button>
+</div>
+<div id="result"></div>
+
+</body >
+</html>
