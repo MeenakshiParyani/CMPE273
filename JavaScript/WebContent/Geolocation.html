@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<title>Geo Location</title>
+<body>
+
+<p>Click the button to get user coordinates.</p>
+
+<button onclick="getLocation()">Get Location</button>
+
+<p id="location"></p>
+
+<script>
+var loc = document.getElementById("location");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    }
+}
+
+function showPosition(position) {
+	var latlon = position.coords.latitude + "," + position.coords.longitude;
+    var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="
+    +latlon+"&zoom=14&size=400x300&key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU";
+    document.getElementById("location").innerHTML = "<img src='"+img_url+"'>";
+}
+</script>
+
+</body>
+</html>
