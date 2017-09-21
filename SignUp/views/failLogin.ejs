@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Failed Login</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Failed Login</h1>
+    <% if(invalid) { %>
+    <div class="alert alert-danger">
+        // Change <% to <%=
+        <%= "Invalid" %>
+    </div>
+<% } %> 
+  </body>
+</html>
