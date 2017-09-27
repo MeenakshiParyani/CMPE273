@@ -21,8 +21,7 @@ const App = () => {
           </td>
           <td></td>
           <td className="outerTable" padding="5%">
-            <OrderList/><br></br><br></br><br></br><br></br><br></br><hr></hr>
-            <Total/>
+            <OrderList/>
           </td>
         </tr>
         </table>

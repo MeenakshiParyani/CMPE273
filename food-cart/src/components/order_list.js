@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import OrderItem from './order_item';
+import Total from './total_price';
 
 export default class OrderList extends Component {
-  getInitialState(){
-      return{total:0, qty:0};
+  constructor(props){
+      super(props);
+      this.state={total:0};
+      this.addToTotal = this.addToTotal.bind(this);
+      this.removeFromTotal = this.removeFromTotal.bind(this);
   }
 
   addToTotal(price){
@@ -14,15 +18,14 @@ export default class OrderList extends Component {
     this.setState({total: this.state.total - price});
   }
 
-  handleRemove(){
-
-
-  }
-
   render() {
     return (
-      <div className="tablePadding">
-        <OrderItem name="Pasta Carbonara" price="12.00" qty="1" handleRemove={this.handleRemove}/><br></br>
+      <div>
+        <div className="tablePadding">
+          <OrderItem name={this.state.name} price={this.state.price} qty={this.state.qty} handleRemove={this.removeFromTotal}/><br></br>
+        </div>
+        <br></br><br></br><br></br><br></br><br></br><hr></hr>
+        <Total total={this.state.total}/>
       </div>
     );
   }
