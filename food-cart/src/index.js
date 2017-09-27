@@ -20,7 +20,7 @@ const App = () => {
             <MenuList />
           </td>
           <td></td>
-          <td className="outerTable" padding="5%">
+          <td className="outerTable" padding="5%" id="orderList">
             <OrderList/>
           </td>
         </tr>
