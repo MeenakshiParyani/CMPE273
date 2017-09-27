@@ -21,6 +21,8 @@ export default class MenuList extends Component {
 
       total:0}
       this.handleAdd = this.handleAdd.bind(this);
+      this.removeFromTotal = this.removeFromTotal.bind(this);
+      this.getTotal = this.getTotal.bind(this);
   }
 
   handleAdd(event,item){
@@ -36,15 +38,21 @@ export default class MenuList extends Component {
     }else{
       orderList.push({name: item.name, price: item.price, qty:1});
     }
-    this.setState({selectedList: orderList});
+    this.setState({selectedList: orderList, total:this.getTotal(orderList)});
   }
 
-  removeFromTotal(price, item){
+  removeFromTotal(event, item){
     var newState = this.state.selectedList.filter( (match) => {return match.name != item.name});
-    this.setState({selectedList : newState,  total: this.state.total - item.qty * item.price});
-    //this.setState({});
+    this.setState({selectedList : newState,  total: this.getTotal(newState)});
   }
 
+  getTotal(selectedList){
+    var total = 0;
+    selectedList.map( item => {
+        total += item.qty * item.price;
+    });
+    return total;
+  }
 
   render() {
     var menuListClass = this;
@@ -70,7 +78,7 @@ export default class MenuList extends Component {
             </td>
             <td></td>
             <td className="outerTable" padding="5%" id="orderList">
-              <OrderList selectedList={this.state.selectedList}/>
+              <OrderList selectedList={this.state.selectedList} total={this.state.total} removeFromTotal={this.removeFromTotal}/>
             </td>
           </tr>
           </table>
