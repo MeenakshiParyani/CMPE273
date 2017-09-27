@@ -15,7 +15,7 @@ export default class OrderItem extends Component {
           ${this.props.price}<br></br>
           Qty: {this.props.qty}
         </td>
-        <td><button onClick={this.remove}>Remove</button></td></tr>
+        <td><button onClick={this.props.handleRemove}>Remove</button></td></tr>
         </table>
       </div>
     );

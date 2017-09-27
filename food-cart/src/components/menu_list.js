@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import MenuItem from './menu_item';
 import ReactDOM from 'react-dom';
-
+import OrderList from './order_list';
 export default class MenuList extends Component {
 
   constructor(props){
@@ -17,7 +17,9 @@ export default class MenuList extends Component {
         {name:"Panzenella" , price:10.00 , qty:0 },
         {name:"Bruschetta" , price:10.00 , qty:0 },
         {name:"Tiramisu", price:6.00 , qty:0 }
-      ] }
+      ],
+
+      total:0}
       this.handleAdd = this.handleAdd.bind(this);
   }
 
@@ -26,14 +28,21 @@ export default class MenuList extends Component {
     console.log(event);
     console.log(item);
     var name = item.name;
-    var selectedItems = this.state.selectedList.filter( (match) => {return name == item.name});
-    var orderList = this.state.selectedList;
+    var selectedItems = this.state.selectedList.filter( (match) => {return name == match.name});
+    var orderList = this.state.selectedList.filter( (match) => {return name != match.name});
     if(selectedItems.length !=0){
-      orderList[0].qty = parseInt(orderList[0].qty) +1;
+      selectedItems[0].qty = parseInt(selectedItems[0].qty) +1;
+      orderList.push(selectedItems[0]);
     }else{
-      orderList.push({name: item.name, price: item.price, qty:item.qty});
+      orderList.push({name: item.name, price: item.price, qty:1});
     }
     this.setState({selectedList: orderList});
+  }
+
+  removeFromTotal(price, item){
+    var newState = this.state.selectedList.filter( (match) => {return match.name != item.name});
+    this.setState({selectedList : newState,  total: this.state.total - item.qty * item.price});
+    //this.setState({});
   }
 
 
@@ -46,9 +55,31 @@ export default class MenuList extends Component {
     });
 
     return (
-      <div className="tablePadding">
-        {items}
+      <div>
+        <br></br><br></br><br></br>
+        <div>
+          <table>
+          <tr>
+            <th> Menu </th>
+            <th>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</th>
+            <th> Order </th>
+          </tr>
+          <tr>
+            <td className="outerTable">
+              {items}
+            </td>
+            <td></td>
+            <td className="outerTable" padding="5%" id="orderList">
+              <OrderList selectedList={this.state.selectedList}/>
+            </td>
+          </tr>
+          </table>
+
+        </div>
       </div>
+      // <div className="tablePadding">
+      //   {items}
+      // </div>
     );
 
   }
