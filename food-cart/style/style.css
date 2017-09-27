@@ -5,16 +5,21 @@
   background: "#aaaaaa";
   width: 450px;
   align-items: center;
+  height: 85px;
 }
 
 .innerTable{
   border: none;
   width: 400px;
   border-style: ridge;
-  padding-top: 10px;
+  padding-top: 16px;
   padding-right: 10px;
   padding-bottom: 10px;
   padding-left: 10px;
+  height: 65px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: 20px;
 }
 
 .tablePadding{
@@ -28,5 +33,17 @@
 .total{
   padding-left: 30px;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 30px;
+}
+
+.style{
+  width:320px;
+  height:50px;
+  border:1px solid #000;
+  margin:10% auto;
+  padding:12px;
+}
+
+.rightAlign{
+  text-align: right;
 }

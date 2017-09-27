@@ -10,7 +10,7 @@ export default class Total extends Component {
 
   render() {
     return (
-      <p className="total"> Total: {this.props.total}$</p>
+      <span className="total"> Total: <span text-align="right"> {this.props.total}$ </span></span>
     );
   }
 }

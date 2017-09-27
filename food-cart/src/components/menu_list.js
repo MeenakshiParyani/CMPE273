@@ -19,7 +19,7 @@ export default class MenuList extends Component {
         {name:"Tiramisu", price:6.00 , qty:0 }
       ],
 
-      total:0}
+      total:12.00}
       this.handleAdd = this.handleAdd.bind(this);
       this.removeFromTotal = this.removeFromTotal.bind(this);
       this.getTotal = this.getTotal.bind(this);
@@ -85,9 +85,6 @@ export default class MenuList extends Component {
 
         </div>
       </div>
-      // <div className="tablePadding">
-      //   {items}
-      // </div>
     );
 
   }
