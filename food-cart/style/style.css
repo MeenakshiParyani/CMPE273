@@ -1,0 +1,32 @@
+.outerTable{
+  border: 1px;
+  border-width: thin;
+  border-style: solid;
+  background: "#aaaaaa";
+  width: 450px;
+  align-items: center;
+}
+
+.innerTable{
+  border: none;
+  width: 400px;
+  border-style: ridge;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+}
+
+.tablePadding{
+  padding-left: 30px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding: 5%;
+}
+
+.total{
+  padding-left: 30px;
+  font-weight: bold;
+  font-size: 16px;
+}
