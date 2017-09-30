@@ -19,7 +19,7 @@
   height: 65px;
   margin-bottom: 10px;
   margin-top: 10px;
-  margin-left: 20px;
+  margin-left: 5%;
 }
 
 .tablePadding{
@@ -46,4 +46,18 @@
 
 .rightAlign{
   text-align: right;
+}
+
+.body {
+font-family: 'Merriweather', serif;
+background-color: #FFFFFF;
+}
+
+.subscript{
+  font-size: 12px
+}
+
+.alignText{
+  text-align: center;
+  font-size: 20px
 }

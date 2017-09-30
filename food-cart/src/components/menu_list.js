@@ -68,9 +68,9 @@ export default class MenuList extends Component {
         <div>
           <table>
           <tr>
-            <th> Menu </th>
+            <th className="alignText"> Menu </th>
             <th>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</th>
-            <th> Order </th>
+            <th className="alignText"> Order </th>
           </tr>
           <tr>
             <td className="outerTable">
